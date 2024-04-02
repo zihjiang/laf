@@ -113,6 +113,7 @@ export class LogController {
     ).podNameList
 
     if (!podNameList.includes(podName) && podName !== 'all') {
+
       return new Observable<MessageEvent>((subscriber) => {
         subscriber.next(
           JSON.stringify({
@@ -121,7 +122,7 @@ export class LogController {
         )
         subscriber.complete()
       })
-    }
+    } 
 
     if (podName !== 'all') {
       podNameList = undefined
@@ -137,9 +138,14 @@ export class LogController {
 
       const streamsEnded = new Set<string>()
 
+      const timerId = setInterval(() => {
+        subscriber.next('data: \n')
+      }, 60000)
+      
       const destroyStream = () => {
         combinedLogStream?.removeAllListeners()
         combinedLogStream?.destroy()
+        clearInterval(timerId)
       }
 
       combinedLogStream.on('data', (chunk) => {
