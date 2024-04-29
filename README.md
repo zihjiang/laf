@@ -164,12 +164,3 @@
 ## 🎉 本地部署
 
 [本地部署](./deploy/README.md)
-
-## 🏘️ 社群
-
-- [微信群](https://oss.lafyun.com/wofnib-image/2022-04-22-14-21-MRJH9o.png)
-- [QQ 群：603059673](https://jq.qq.com/?_wv=1027&k=DdRCCiuz)
-
-## 🌟 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=labring/laf&type=Date)](https://star-history.com/#labring/laf&Date)
